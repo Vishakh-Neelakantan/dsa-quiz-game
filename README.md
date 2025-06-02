@@ -3,18 +3,19 @@
 To play the terminal-based coding quiz game, follow these steps on your computer:
 
 🧑‍💻 Step-by-Step Instructions
+
 ✅ 1. Prerequisites
+
 Make sure Python 3 is installed on your system.
 
 You can check by running this in your terminal or command prompt:
 
-bash
-Copy
-Edit
 python3 --version
+
 If not installed, download Python from: https://www.python.org/downloads/
 
 📁 2. Save the Script
+
 Open a text editor like Notepad, VS Code, or any code editor.
 
 Copy and paste the entire Python code from the previous message.
@@ -22,11 +23,10 @@ Copy and paste the entire Python code from the previous message.
 Save the file with a name like quiz_game.py.
 
 💻 3. Run the Game in Terminal
+
 Open your terminal (Command Prompt on Windows, Terminal on macOS/Linux) and:
 
-Navigate to the folder where you saved the file. Example:
-
-cd Desktop
+Navigate to the folder where you saved the file.
 
 Run the game:
 
@@ -34,6 +34,7 @@ python3 quiz_game.py
 (On Windows, you might need to use python instead of python3)
 
 🕹️ 4. How to Play
+
 The game will ask 5 random multiple-choice questions related to algorithms and data structures.
 
 You must enter the letter corresponding to your answer (A, B, C, or D).
@@ -62,3 +63,7 @@ Your answer (A/B/C/D): C
 ...
 
 🏁 Game Over! Your final score is: 3/5
+
+Screenshot for reference - 
+
+![image](https://github.com/user-attachments/assets/82b4352b-7d24-440a-91ff-7a63797e0594)
