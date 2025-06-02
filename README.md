@@ -1,4 +1,4 @@
-# dsa-quiz-game
+# DSA-quiz-game
 
 To play the terminal-based coding quiz game, follow these steps on your computer:
 
@@ -20,7 +20,7 @@ Open a text editor like Notepad, VS Code, or any code editor.
 
 Copy and paste the entire Python code from the previous message.
 
-Save the file with a name like quiz_game.py.
+Save the file.
 
 💻 3. Run the Game in Terminal
 
@@ -30,7 +30,7 @@ Navigate to the folder where you saved the file.
 
 Run the game:
 
-python3 quiz_game.py
+python3 file_name.py
 (On Windows, you might need to use python instead of python3)
 
 🕹️ 4. How to Play
