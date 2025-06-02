@@ -1,11 +1,16 @@
-# This code implements a quiz game on algorithms and data structures.
-# It randomly selects 5 questions from a pool of 100 variants and evaluates the user's answers.
+# # This code implements a quiz game on algorithms and data structures.
+# # It randomly selects 5 questions from a pool of 100 variants and evaluates the user's answers.
 
+
+from rich.console import Console
+from rich.prompt import Prompt
+from rich.panel import Panel
 import random
 
-# Question pool (100 entries)
-base_questions = [
-  {
+console = Console()
+
+question_pool = [
+    {
     "question": "Which data structure is ideal for implementing a browser's back button functionality?",
     "options": ["A. Queue", "B. Tree", "C. Stack", "D. Heap"],
     "answer": "C"
@@ -130,34 +135,37 @@ base_questions = [
     "options": ["A. Queue", "B. Heap", "C. Stack", "D. Linked List"],
     "answer": "C"
   }
+    # Add more questions...
 ]
-
-
-# Directly shuffle base questions without variants
-random.shuffle(base_questions)
 
 def play_game():
     score = 0
-    # Select 5 unique questions from base questions
-    selected_questions = random.sample(base_questions, 5)
-    
-    print("\n📘 Welcome to the Algorithms & Data Structures Quiz!")
-    print("Answer 5 questions. +1 for correct, -1 for incorrect. Good luck!\n")
+    selected_questions = random.sample(question_pool, 5)
+
+    console.print(Panel.fit("[bold blue]📘 Welcome to the Algorithms & Data Structures Quiz![/bold blue]\n[dim]Answer 5 questions. +1 for correct, -1 for incorrect. Good luck![/dim]"))
 
     for idx, q in enumerate(selected_questions, 1):
-        print(f"\nQuestion {idx}: {q['question']}")
+        console.rule(f"[bold yellow]Question {idx}[/bold yellow]")
+        console.print(f"[bold]{q['question']}[/bold]\n")
+
         for option in q["options"]:
-            print(option)
-        user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+            console.print(option)
+
+        user_answer = Prompt.ask("[bold cyan]Your answer (A/B/C/D)[/bold cyan]").strip().upper()
+
         if user_answer == q["answer"]:
-            print("✅ Correct!")
+            console.print("[green]✅ Correct![/green]")
             score += 1
         else:
-            print(f"❌ Incorrect. The correct answer was {q['answer']}.")
+            console.print(f"[red]❌ Incorrect![/red] The correct answer was [bold]{q['answer']}[/bold].")
             score -= 1
 
-    print(f"\n🏁 Game Over! Your final score is: {score}/5")
+    console.rule("[bold green]🏁 Game Over![/bold green]")
+    console.print(f"[bold cyan]Your final score is: [yellow]{score}/5[/yellow][/bold cyan]")
 
-if __name__ == "__main__":
+def main():
     play_game()
 
+if __name__ == "__main__":
+    main()
+    
